@@ -7,3 +7,4 @@ forex-mtl/target/*
 .vscode/settings.json
 forex-mtl/.bloop/*
 forex-mtl/.idea/*
+.idea/*
