@@ -33,7 +33,7 @@ class RatesHttpRoutes[F[_]: Async](rates: RatesProgram[F]) extends Http4sDsl[F] 
 
           error match {
             case ProgramErrors.Error.RateLookupFailed(message) if message.toLowerCase.contains("forbidden") =>
-              Forbidden("You do not have permission to access this resource.")
+              Forbidden("Missing token")
 
             case ProgramErrors.Error.RateLookupFailed(message) if message.toLowerCase.contains("not found") =>
               NotFound(s"Rate lookup failed: $message")
