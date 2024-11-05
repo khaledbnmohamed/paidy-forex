@@ -29,7 +29,7 @@ scalacOptions ++= Seq(
   "-Xlint:private-shadow", // A private field (or class parameter) shadows a superclass field.
   "-Xlint:stars-align", // Pattern sequence wildcard must align with sequence component.
   "-Xlint:type-parameter-shadow", // A local type parameter shadows a type already in scope.
-  "-Xlog-reflective-calls", // Print a message when a reflective method call is generated
+  "-Xlog-reflective-calls", // Print a messsage when a reflective method call is generated
   "-Ywarn-dead-code", // Warn when dead code is identified.
   "-Ywarn-value-discard", // Warn when non-Unit expression results are unused.
   "-Xlint:constant", // Evaluation of a constant arithmetic expression results in an error.
@@ -46,17 +46,19 @@ scalacOptions ++= Seq(
   "-Ycache-macro-class-loader:last-modified" // and macro definitions. This can lead to performance improvements.
 )
 
-resolvers +=
-  "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
+resolvers ++= Seq(
+  "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots",
+  "Maven Central" at "https://repo1.maven.org/maven2/"
+)
+
+val http4sVersion = "0.23.11"
+libraryDependencySchemes += "org.typelevel" %% "cats-effect" % "early-semver"
 
 libraryDependencies ++= Seq(
   compilerPlugin(Libraries.kindProjector),
   Libraries.cats,
   Libraries.catsEffect,
   Libraries.fs2,
-  Libraries.http4sDsl,
-  Libraries.http4sServer,
-  Libraries.http4sCirce,
   Libraries.circeCore,
   Libraries.circeGeneric,
   Libraries.circeGenericExt,
@@ -65,5 +67,17 @@ libraryDependencies ++= Seq(
   Libraries.logback,
   Libraries.scalaTest      % Test,
   Libraries.scalaCheck     % Test,
-  Libraries.catsScalaCheck % Test
+  Libraries.catsScalaCheck % Test,
+  "org.http4s" %% "http4s-core" % http4sVersion,
+  "org.http4s" %% "http4s-client" % http4sVersion,
+  "org.http4s" %% "http4s-server" % http4sVersion,
+  "org.http4s" %% "http4s-ember-client" % http4sVersion,
+  "org.http4s" %% "http4s-ember-server" % http4sVersion,
+  "org.http4s" %% "http4s-dsl" % http4sVersion,
+  "org.http4s" %% "http4s-blaze-server" % http4sVersion,
+  "org.http4s" %% "http4s-blaze-client" % http4sVersion,
+  "org.http4s" %% "http4s-circe" % http4sVersion,
+  "is.cir" %% "ciris" % "3.6.0",
+  "io.circe" %% "circe-parser" % "0.14.1",
+  "org.slf4j" % "slf4j-api" % "1.7.30"
 )

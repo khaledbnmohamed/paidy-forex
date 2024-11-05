@@ -1,0 +1,10 @@
+{
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#2B2F29",
+    "titleBar.activeBackground": "#3D413A",
+    "titleBar.activeForeground": "#FBFBFB"
+  },
+  "files.watcherExclude": {
+    "**/target": true
+  }
+}

@@ -3,17 +3,17 @@ import sbt._
 object Dependencies {
 
   object Versions {
-    val cats       = "2.6.1"
-    val catsEffect = "2.5.1"
-    val fs2        = "2.5.4"
-    val http4s     = "0.22.15"
+    val cats       = "2.12.0"
+    val catsEffect = "3.5.4"
+    val fs2        = "3.10.2"
+    val http4s     = "1.0.0-M39"
     val circe      = "0.14.2"
-    val pureConfig = "0.17.4"
+    val pureConfig = "0.17.7"
 
-    val kindProjector  = "0.13.2"
-    val logback        = "1.2.3"
-    val scalaCheck     = "1.15.3"
-    val scalaTest      = "3.2.7"
+    val kindProjector  = "0.13.3"
+    val logback        = "1.5.6"
+    val scalaCheck     = "1.18.0"
+    val scalaTest      = "3.2.19"
     val catsScalaCheck = "0.3.2"
   }
 
@@ -24,7 +24,6 @@ object Dependencies {
     lazy val cats       = "org.typelevel" %% "cats-core"   % Versions.cats
     lazy val catsEffect = "org.typelevel" %% "cats-effect" % Versions.catsEffect
     lazy val fs2        = "co.fs2"        %% "fs2-core"    % Versions.fs2
-
     lazy val http4sDsl       = http4s("http4s-dsl")
     lazy val http4sServer    = http4s("http4s-blaze-server")
     lazy val http4sCirce     = http4s("http4s-circe")
