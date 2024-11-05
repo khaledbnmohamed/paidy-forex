@@ -1,3 +1,9 @@
 .metals/metals.mv.db
 .vscode/settings.json
-forex-mtl/project/project/project/*
+forex-mtl/project/project/*
+forex-mtl/project/target/*
+forex-mtl/target/*
+.metals/*
+.vscode/settings.json
+forex-mtl/.bloop/*
+forex-mtl/.idea/*
