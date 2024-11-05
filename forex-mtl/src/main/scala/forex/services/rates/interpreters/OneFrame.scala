@@ -15,15 +15,11 @@ import org.typelevel.ci.CIString
 class OneFrame[F[_]: Async](client: Client[F]) extends Algebra[F] {
 
   private val logger = LoggerFactory.getLogger(this.getClass)
-
-  // Load the token from the environment once
-  private val apiToken: String = "10dc303535874aeccc86a8251e6992f5"
-
-  // Case class for OneFrame API response
+  val apiToken: String = sys.env.getOrElse("ONE_FRAME_API_TOKEN", "10dc303535874aeccc86a8251e6992f5")
   private case class OneFrameResponse(from: String, to: String, price: BigDecimal, time_stamp: String)
 
   // Provide an implicit EntityDecoder and Decoder for OneFrameResponse
-  implicit private val oneFrameResponseDecoder: Decoder[OneFrameResponse] = deriveDecoder[OneFrameResponse]
+  implicit private val oneFrameResponseDecoder: Decoder[OneFrameResponse]      = deriveDecoder[OneFrameResponse]
   implicit private val entityDecoder: EntityDecoder[F, List[OneFrameResponse]] = jsonOf[F, List[OneFrameResponse]]
 
   // Base URL for OneFrame API
@@ -43,7 +39,7 @@ class OneFrame[F[_]: Async](client: Client[F]) extends Algebra[F] {
         // Log the successful response
         logger.info(s"Received response from OneFrame API: $responses")
         val response = responses.head // or handle multiple responses as needed
-        val rate = Rate(pair, Price(response.price), Timestamp.now)
+        val rate     = Rate(pair, Price(response.price), Timestamp.now)
         Async[F].pure(rate.asRight[Error])
 
       case Right(_) =>

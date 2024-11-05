@@ -15,13 +15,11 @@ class Module[F[_]: Async](client: Client[F]) {
 
   private val initialCache: Map[Rate.Pair, (Rate, Timestamp)] = Map.empty
 
-  // Initialize the cache as F[Ref]
   private val cache: F[Ref[F, Map[Rate.Pair, (Rate, Timestamp)]]] =
     Ref.of[F, Map[Rate.Pair, (Rate, Timestamp)]](initialCache)
 
-  // Use flatMap to unwrap cache before passing it to RatesProgram
   def httpApp: F[HttpApp[F]] = cache.flatMap { unwrappedCache =>
-    val ratesService: RatesService[F] = RatesServices.dummy[F](client) // Pass the client
+    val ratesService: RatesService[F] = RatesServices.dummy[F](client)
     val ratesProgram: RatesProgram[F] = RatesProgram[F](ratesService, unwrappedCache)
 
     val ratesHttpRoutes: HttpRoutes[F] = new RatesHttpRoutes[F](ratesProgram).routes

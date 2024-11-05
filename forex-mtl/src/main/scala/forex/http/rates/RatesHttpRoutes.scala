@@ -3,7 +3,7 @@ package forex.http.rates
 import cats.effect.Async
 import cats.syntax.flatMap._
 import forex.programs.RatesProgram
-import forex.programs.rates.{Protocol => RatesProgramProtocol}
+import forex.programs.rates.{Protocol => RatesProgramProtocol, errors => ProgramErrors}
 import forex.services.rates.errors.{Error => RatesServiceError}
 import org.http4s.circe.CirceEntityCodec.circeEntityEncoder
 import org.http4s.dsl.Http4sDsl
@@ -27,12 +27,23 @@ class RatesHttpRoutes[F[_]: Async](rates: RatesProgram[F]) extends Http4sDsl[F] 
       rates.get(RatesProgramProtocol.GetRatesRequest(from, to)).flatMap {
         case Right(rate) =>
           Ok(rate.asGetApiResponse)
+
         case Left(error) =>
-          // Log the error and respond with an error message
           logger.error(s"Error fetching rates: $error")
-//          val errorMessage = s"Failed to fetch rate from OneFrame: ${error.getMessage}"
-          Ok("ok")
-  //          Async[F].pure(RatesServiceError.OneFrameLookupFailed(errorMessage).asLeft[Rate]) // Use Async[F].pure
+
+          error match {
+            case ProgramErrors.Error.RateLookupFailed(message) if message.toLowerCase.contains("forbidden") =>
+              Forbidden("You do not have permission to access this resource.")
+
+            case ProgramErrors.Error.RateLookupFailed(message) if message.toLowerCase.contains("not found") =>
+              NotFound(s"Rate lookup failed: $message")
+
+            case ProgramErrors.Error.RateLookupFailed(message) =>
+              InternalServerError(s"Rate lookup failed: $message")
+
+            case _ =>
+              InternalServerError("An unexpected error occurred")
+          }
       }
   }
 

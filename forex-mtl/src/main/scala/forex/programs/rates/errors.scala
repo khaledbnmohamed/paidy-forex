@@ -11,9 +11,12 @@ object errors {
   object Error {
     implicit val encoder: Encoder[Error] = deriveEncoder[Error]
     final case class RateLookupFailed(msg: String) extends Error
+
+    final case class InternalError(msg: String) extends Error
   }
 
   def toProgramError(error: RatesServiceError): Error = error match {
     case RatesServiceError.OneFrameLookupFailed(msg) => Error.RateLookupFailed(msg)
+    case _ => Error.InternalError("Somethibg went wrong")
   }
 }
