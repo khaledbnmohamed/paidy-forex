@@ -8,8 +8,10 @@ case class Timestamp(value: OffsetDateTime) extends AnyVal
 object Timestamp {
   def now: Timestamp =
     Timestamp(OffsetDateTime.now)
-}
 
+  def parse(dateTimeString: String): Timestamp =
+    Timestamp(OffsetDateTime.parse(dateTimeString))
+}
 
 object TimestampOps {
   implicit class RichTimestamp(timestamp: Timestamp) {

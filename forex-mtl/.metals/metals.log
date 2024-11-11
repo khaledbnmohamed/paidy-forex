@@ -89,3 +89,41 @@ java.util.NoSuchElementException: key not found: 2
 2024.11.11 18:39:16 INFO  compiling forex-mtl (23 scala sources)
 2024.11.11 18:39:29 WARN  Invalid text document uri received from build server: file:///Users/khaled/Documents/projects/paidy/forex-mtl/src/main/scala/forex/programs/rates/Program.scala
 2024.11.11 18:39:29 INFO  time: compiled forex-mtl in 12s
+2024.11.12 02:10:12 ERROR /Users/khaled/Documents/projects/paidy/forex-mtl/src/test/scala/forex.http.rates/RatesHttpRoutesSpec.scala
+scala.meta.internal.tokenizers.package$UnexpectedInputEndException
+	at scala.meta.internal.tokenizers.LegacyScanner.$anonfun$nextToken$1(LegacyScanner.scala:172)
+	at scala.Function0.apply$mcV$sp(Function0.scala:42)
+	at scala.meta.internal.tokenizers.LegacyScanner.scala$meta$internal$tokenizers$LegacyScanner$$nextToken(LegacyScanner.scala:178)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:172)
+	at scala.meta.internal.mtags.ScalaToplevelMtags$XtensionScanner.mtagsNextToken(ScalaToplevelMtags.scala:73)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.loop(ScalaToplevelMtags.scala:478)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.indexRoot(ScalaToplevelMtags.scala:85)
+	at scala.meta.internal.metals.SemanticdbDefinition$.foreachWithReturnMtags(SemanticdbDefinition.scala:81)
+	at scala.meta.internal.metals.Indexer.indexSourceFile(Indexer.scala:485)
+	at scala.meta.internal.metals.Indexer.$anonfun$reindexWorkspaceSources$3(Indexer.scala:583)
+	at scala.meta.internal.metals.Indexer.$anonfun$reindexWorkspaceSources$3$adapted(Indexer.scala:580)
+	at scala.collection.IterableOnceOps.foreach(IterableOnce.scala:619)
+	at scala.collection.IterableOnceOps.foreach$(IterableOnce.scala:617)
+	at scala.collection.AbstractIterator.foreach(Iterator.scala:1303)
+	at scala.meta.internal.metals.Indexer.reindexWorkspaceSources(Indexer.scala:580)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$onChange$2(MetalsLspService.scala:946)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.11.12 02:11:27 INFO  compiling forex-mtl (23 scala sources)
+2024.11.12 02:11:38 WARN  Invalid text document uri received from build server: file:///Users/khaled/Documents/projects/paidy/forex-mtl/src/main/scala/forex/services/rates/interpreters/OneFrame.scala
+2024.11.12 02:11:38 INFO  time: compiled forex-mtl in 11s
+2024.11.12 02:17:13 INFO  no build target found for /Users/khaled/Documents/projects/paidy/forex-mtl/build.sbt. Using presentation compiler with project's scala-library version: 2.13.12
+2024.11.12 02:17:13 WARN  no build target for: /Users/khaled/Documents/projects/paidy/forex-mtl/build.sbt
+2024.11.12 03:43:15 INFO  no build target found for /Users/khaled/Documents/projects/paidy/forex-mtl/build.sbt. Using presentation compiler with project's scala-library version: 2.13.12
+2024.11.12 03:43:15 WARN  no build target for: /Users/khaled/Documents/projects/paidy/forex-mtl/build.sbt
+2024.11.12 03:43:22 INFO  no build target found for /Users/khaled/Documents/projects/paidy/forex-mtl/build.sbt. Using presentation compiler with project's scala-library version: 2.13.12
+2024.11.12 03:43:23 WARN  no build target for: /Users/khaled/Documents/projects/paidy/forex-mtl/build.sbt
+2024.11.12 03:43:42 INFO  no build target found for /Users/khaled/Documents/projects/paidy/forex-mtl/build.sbt. Using presentation compiler with project's scala-library version: 2.13.12
+2024.11.12 03:43:42 WARN  no build target for: /Users/khaled/Documents/projects/paidy/forex-mtl/build.sbt
+2024.11.12 03:43:44 WARN  no build target for: /Users/khaled/Documents/projects/paidy/forex-mtl/build.sbt
+2024.11.12 03:43:44 INFO  no build target found for /Users/khaled/Documents/projects/paidy/forex-mtl/build.sbt. Using presentation compiler with project's scala-library version: 2.13.12
