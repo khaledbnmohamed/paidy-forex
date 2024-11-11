@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory
 
 import scala.concurrent.duration._
 
-class Program[F[_]: Sync](ratesService: RatesService[F], cache: Ref[F, Map[Rate.Pair, (Rate, Timestamp)]])
+class CachedRatesProgram[F[_]: Sync](ratesService: RatesService[F], cache: Ref[F, Map[Rate.Pair, (Rate, Timestamp)]])
     extends Algebra[F] {
 
   private val cacheDuration = 5.minutes
@@ -49,5 +49,5 @@ object Program {
   def apply[F[_]: Sync](
       ratesService: RatesService[F],
       cache: Ref[F, Map[Rate.Pair, (Rate, Timestamp)]]
-  ): Algebra[F] = new Program[F](ratesService, cache)
+  ): Algebra[F] = new CachedRatesProgram[F](ratesService, cache)
 }

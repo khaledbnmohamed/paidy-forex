@@ -18,11 +18,11 @@ class Application[F[_]: Async](client: Client[F]) {
   def stream: Stream[F, Unit] =
     for {
       config <- Config.stream("app")
-      module = new Module[F](client) // Pass the client to Module
-      httpApp <- Stream.eval(module.httpApp) // Use Stream.eval to unwrap F[HttpApp[F]]
+      module = new Module[F](client, config.oneFrame)
+      httpApp <- Stream.eval(module.httpApp)
       _ <- BlazeServerBuilder[F]
             .bindHttp(config.http.port, config.http.host)
-            .withHttpApp(httpApp) // Use the unwrapped HttpApp
+            .withHttpApp(httpApp)
             .serve
     } yield ()
 }

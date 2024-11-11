@@ -79,5 +79,9 @@ libraryDependencies ++= Seq(
   "org.http4s" %% "http4s-circe" % http4sVersion,
   "is.cir" %% "ciris" % "3.6.0",
   "io.circe" %% "circe-parser" % "0.14.1",
-  "org.slf4j" % "slf4j-api" % "1.7.30"
+  "org.slf4j" % "slf4j-api" % "1.7.30",
+  "org.scalatest" %% "scalatest" % "3.2.14" % Test,
+  "org.scalatestplus" %% "mockito-4-6" % "3.2.14.0" % Test
+
+
 )

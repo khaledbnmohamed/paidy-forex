@@ -1,0 +1,91 @@
+2024.11.08 00:57:31 INFO  Started: Metals version 1.4.0 in folders '/Users/khaled/Documents/projects/paidy/forex-mtl' for client Visual Studio Code 1.75.1.
+2024.11.08 00:57:31 INFO  time: initialize in 0.14s
+2024.11.08 00:57:36 WARN  Flyway upgrade recommended: H2 2.3.232 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.224.
+2024.11.08 00:57:40 INFO  no build target found for /Users/khaled/Documents/projects/paidy/forex-mtl/src/main/scala/forex/services/rates/interpreters/OneFrame.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2024.11.08 00:57:49 INFO  Attempting to connect to the build server...
+2024.11.08 00:57:49 INFO  No running Bloop server found, starting one.
+2024.11.08 00:57:53 INFO  Starting compilation server
+2024.11.08 00:57:56 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/khaled/Documents/projects/paidy/forex-mtl/.metals/bsp.trace.json or /Users/khaled/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.11.08 00:57:57 INFO  time: Connected to build server in 8.06s
+2024.11.08 00:57:57 INFO  Connected to Build server: Bloop v2.0.3
+2024.11.08 00:57:57 INFO  time: Imported build in 0.29s
+2024.11.08 00:57:57 INFO  running doctor check
+2024.11.08 00:57:57 INFO  java targets: forex-mtl-test, forex-mtl
+2024.11.08 00:58:06 WARN  Flyway upgrade recommended: H2 2.3.232 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.224.
+2024.11.08 00:58:14 INFO  time: indexed workspace in 16s
+2024.11.08 00:58:15 INFO  compiling forex-mtl (23 scala sources)
+2024.11.08 00:58:34 INFO  time: compiled forex-mtl in 19s
+2024.11.08 00:58:35 INFO  compiling forex-mtl (23 scala sources)
+2024.11.08 00:58:45 INFO  time: compiled forex-mtl in 9.98s
+2024.11.08 01:02:06 INFO  Shutting down server
+2024.11.08 01:02:06 INFO  shutting down Metals
+2024.11.08 01:02:06 INFO  Shut down connection with build server.
+2024.11.08 01:02:06 INFO  Exiting server
+2024.11.08 01:03:30 INFO  Started: Metals version 1.4.0 in folders '/Users/khaled/Documents/projects/paidy/forex-mtl' for client Visual Studio Code 1.75.1.
+2024.11.08 01:03:34 WARN  Flyway upgrade recommended: H2 2.3.232 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.224.
+2024.11.08 01:03:34 INFO  no build target found for /Users/khaled/Documents/projects/paidy/forex-mtl/src/main/scala/forex/services/rates/interpreters/OneFrame.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2024.11.08 01:03:47 INFO  Attempting to connect to the build server...
+2024.11.08 01:03:47 INFO  No running Bloop server found, starting one.
+2024.11.08 01:03:56 INFO  no build target found for /Users/khaled/Documents/projects/paidy/forex-mtl/src/main/scala/forex/services/rates/interpreters/OneFrame.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2024.11.08 01:03:58 INFO  no build target found for /Users/khaled/Documents/projects/paidy/forex-mtl/src/main/scala/forex/services/rates/interpreters/OneFrame.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2024.11.08 01:03:58 INFO  Starting compilation server
+2024.11.08 01:04:01 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/khaled/Documents/projects/paidy/forex-mtl/.metals/bsp.trace.json or /Users/khaled/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.11.08 01:04:02 INFO  time: Connected to build server in 14s
+2024.11.08 01:04:02 INFO  Connected to Build server: Bloop v2.0.3
+2024.11.08 01:04:02 INFO  time: Imported build in 0.43s
+2024.11.08 01:04:02 INFO  running doctor check
+2024.11.08 01:04:02 INFO  java targets: forex-mtl-test, forex-mtl
+2024.11.08 01:04:11 WARN  Flyway upgrade recommended: H2 2.3.232 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.224.
+2024.11.08 01:04:12 INFO  time: indexed workspace in 9.79s
+2024.11.08 01:56:50 INFO  Deduplicating compilation of forex-mtl from bsp client 'Metals 1.4.0' (since 52m 48.71s)
+2024.11.08 01:56:50 INFO  compiling forex-mtl (23 scala sources)
+2024.11.08 01:56:50 INFO  compiling forex-mtl (23 scala sources)
+2024.11.08 01:57:12 INFO  time: compiled forex-mtl in 21s
+2024.11.08 02:03:17 INFO  no build target found for /Users/khaled/Documents/projects/paidy/forex-mtl/build.sbt. Using presentation compiler with project's scala-library version: 2.13.12
+2024.11.08 02:03:17 WARN  no build target for: /Users/khaled/Documents/projects/paidy/forex-mtl/build.sbt
+2024.11.08 02:03:40 INFO  no build target found for /Users/khaled/Documents/projects/paidy/forex-mtl/build.sbt. Using presentation compiler with project's scala-library version: 2.13.12
+2024.11.08 02:03:40 WARN  no build target for: /Users/khaled/Documents/projects/paidy/forex-mtl/build.sbt
+2024.11.08 02:05:40 INFO  no build target found for /Users/khaled/Documents/projects/paidy/forex-mtl/build.sbt. Using presentation compiler with project's scala-library version: 2.13.12
+2024.11.08 02:05:41 WARN  no build target for: /Users/khaled/Documents/projects/paidy/forex-mtl/build.sbt
+2024.11.09 15:05:34 ERROR /Users/khaled/Documents/projects/paidy/forex-mtl/src/test/scala/forex.http.rates/RatesHttpRoutesSpec.scala
+java.util.NoSuchElementException: key not found: 2
+	at scala.collection.immutable.BitmapIndexedMapNode.apply(HashMap.scala:674)
+	at scala.collection.immutable.BitmapIndexedMapNode.apply(HashMap.scala:672)
+	at scala.collection.immutable.HashMap.apply(HashMap.scala:132)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.currentToken(ScalaToplevelMtags.scala:1164)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.failMessage(ScalaToplevelMtags.scala:1150)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.require(ScalaToplevelMtags.scala:1168)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.emitPackage(ScalaToplevelMtags.scala:620)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.loop(ScalaToplevelMtags.scala:197)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.indexRoot(ScalaToplevelMtags.scala:85)
+	at scala.meta.internal.metals.SemanticdbDefinition$.foreachWithReturnMtags(SemanticdbDefinition.scala:81)
+	at scala.meta.internal.metals.Indexer.indexSourceFile(Indexer.scala:485)
+	at scala.meta.internal.metals.Indexer.$anonfun$reindexWorkspaceSources$3(Indexer.scala:583)
+	at scala.meta.internal.metals.Indexer.$anonfun$reindexWorkspaceSources$3$adapted(Indexer.scala:580)
+	at scala.collection.IterableOnceOps.foreach(IterableOnce.scala:619)
+	at scala.collection.IterableOnceOps.foreach$(IterableOnce.scala:617)
+	at scala.collection.AbstractIterator.foreach(Iterator.scala:1303)
+	at scala.meta.internal.metals.Indexer.reindexWorkspaceSources(Indexer.scala:580)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$onChange$2(MetalsLspService.scala:946)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.11.11 18:39:07 INFO  Detected new build tool in /Users/khaled/Documents/projects/paidy/forex-mtl
+2024.11.11 18:39:07 INFO  Disconnecting from Bloop session...
+2024.11.11 18:39:08 INFO  Shut down connection with build server.
+2024.11.11 18:39:08 INFO  Attempting to connect to the build server...
+2024.11.11 18:39:08 INFO  Found a Bloop server running
+2024.11.11 18:39:08 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/khaled/Documents/projects/paidy/forex-mtl/.metals/bsp.trace.json or /Users/khaled/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.11.11 18:39:08 INFO  time: Connected to build server in 0.42s
+2024.11.11 18:39:08 INFO  Connected to Build server: Bloop v2.0.3
+2024.11.11 18:39:08 INFO  time: Imported build in 0.11s
+2024.11.11 18:39:08 INFO  running doctor check
+2024.11.11 18:39:08 INFO  java targets: forex-mtl-test, forex-mtl
+2024.11.11 18:39:15 INFO  time: indexed workspace in 6.09s
+2024.11.11 18:39:16 INFO  compiling forex-mtl (23 scala sources)
+2024.11.11 18:39:29 WARN  Invalid text document uri received from build server: file:///Users/khaled/Documents/projects/paidy/forex-mtl/src/main/scala/forex/programs/rates/Program.scala
+2024.11.11 18:39:29 INFO  time: compiled forex-mtl in 12s

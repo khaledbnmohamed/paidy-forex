@@ -11,5 +11,5 @@ package object programs {
 
   def createRatesProgram[F[_]: Async](ratesService: RatesService[F],
                                       cache: Ref[F, Map[Rate.Pair, (Rate, Timestamp)]]): RatesProgram[F] =
-    new rates.Program[F](ratesService, cache)
+    new rates.CachedRatesProgram[F](ratesService, cache)
 }

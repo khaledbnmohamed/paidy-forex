@@ -20,14 +20,11 @@ object Protocol {
       timestamp: Timestamp
   )
 
-  // Ensure encoders for Currency and Timestamp are available
   implicit val currencyEncoder: Encoder[Currency]   = deriveEncoder[Currency]
   implicit val timestampEncoder: Encoder[Timestamp] = deriveEncoder[Timestamp]
 
-  // Deriving Encoder for GetApiResponse using Circe
   implicit val getApiResponseEncoder: Encoder[GetApiResponse] = deriveEncoder[GetApiResponse]
 
-  // Providing EntityEncoder for GetApiResponse
   implicit def getApiResponseEntityEncoder[F[_]]: EntityEncoder[F, GetApiResponse] =
     jsonEncoderOf[F, GetApiResponse]
 }

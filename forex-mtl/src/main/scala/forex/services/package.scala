@@ -1,6 +1,7 @@
 package forex
 
 import cats.effect.Async
+import forex.config.OneFrameConfig
 import org.http4s.client.Client
 
 package object services {
@@ -10,7 +11,8 @@ package object services {
   // Provide a concrete implementation for the RatesService
   object RatesServices {
     // Dummy interpreter that satisfies the RatesService type
-    def dummy[F[_]: Async](client: Client[F]): RatesService[F] =
-      rates.Interpreters.dummy[F](client)
+    def dummy[F[_]: Async](client: Client[F], config: OneFrameConfig): RatesService[F] =
+      rates.Interpreters.dummy[F](client, config)
+
   }
 }
