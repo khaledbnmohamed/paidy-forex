@@ -9,7 +9,7 @@ import org.http4s.client.Client
 
 object Main extends IOApp {
   override def run(args: List[String]): IO[ExitCode] =
-  BlazeClientBuilder[IO].resource.use { client =>
+    BlazeClientBuilder[IO].resource.use { client =>
       new Application[IO](client).stream.compile.drain.as(ExitCode.Success)
     }
 }
@@ -18,7 +18,7 @@ class Application[F[_]: Async](client: Client[F]) {
   def stream: Stream[F, Unit] =
     for {
       config <- Config.stream("app")
-      module = new Module[F](client, config.oneFrame)
+      module = new Module[F](client, config.oneFrame, config.redis)
       httpApp <- Stream.eval(module.httpApp)
       _ <- BlazeServerBuilder[F]
             .bindHttp(config.http.port, config.http.host)

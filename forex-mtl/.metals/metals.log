@@ -127,3 +127,17 @@ scala.meta.internal.tokenizers.package$UnexpectedInputEndException
 2024.11.12 03:43:42 WARN  no build target for: /Users/khaled/Documents/projects/paidy/forex-mtl/build.sbt
 2024.11.12 03:43:44 WARN  no build target for: /Users/khaled/Documents/projects/paidy/forex-mtl/build.sbt
 2024.11.12 03:43:44 INFO  no build target found for /Users/khaled/Documents/projects/paidy/forex-mtl/build.sbt. Using presentation compiler with project's scala-library version: 2.13.12
+2024.11.12 18:39:45 INFO  Detected new build tool in /Users/khaled/Documents/projects/paidy/forex-mtl
+2024.11.12 18:39:45 INFO  Disconnecting from Bloop session...
+2024.11.12 18:39:45 INFO  Shut down connection with build server.
+2024.11.12 18:39:45 INFO  Attempting to connect to the build server...
+2024.11.12 18:39:45 INFO  Found a Bloop server running
+2024.11.12 18:39:45 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/khaled/Documents/projects/paidy/forex-mtl/.metals/bsp.trace.json or /Users/khaled/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.11.12 18:39:45 INFO  time: Connected to build server in 0.37s
+2024.11.12 18:39:45 INFO  Connected to Build server: Bloop v2.0.3
+2024.11.12 18:39:46 INFO  time: Imported build in 0.11s
+2024.11.12 18:39:45 INFO  running doctor check
+2024.11.12 18:39:45 INFO  java targets: forex-mtl-test, forex-mtl
+2024.11.12 18:39:53 INFO  time: indexed workspace in 7.05s
+2024.11.12 18:41:57 INFO  no build target found for /Users/khaled/Documents/projects/paidy/forex-mtl/build.sbt. Using presentation compiler with project's scala-library version: 2.13.12
+2024.11.12 18:41:57 WARN  no build target for: /Users/khaled/Documents/projects/paidy/forex-mtl/build.sbt

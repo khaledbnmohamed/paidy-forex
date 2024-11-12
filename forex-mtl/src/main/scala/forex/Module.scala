@@ -1,30 +1,29 @@
 package forex
 
-import cats.effect._
-import cats.syntax.all._
-import forex.config.OneFrameConfig
-import forex.domain.{Rate, Timestamp}
+import cats.effect.{ Async, Resource }
+import forex.config._
 import forex.http.rates.RatesHttpRoutes
-import forex.programs._
-import forex.services._
-import org.http4s._
+import forex.programs.rates.{ Algebra, CachedRatesProgram }
+import forex.services.{ RatesService, RatesServices }
+import org.http4s.{ HttpApp, HttpRoutes }
 import org.http4s.client.Client
-import org.http4s.implicits._
+import redis.clients.jedis.Jedis
 
+class Module[F[_]: Async](client: Client[F], config: OneFrameConfig, redisConfig: RedisConfig) {
 
-class Module[F[_]: Async](client: Client[F], config: OneFrameConfig) {
-  private val initialCache: Map[Rate.Pair, (Rate, Timestamp)] = Map.empty
+  private def jedisResource: Resource[F, Jedis] =
+    Resource.make {
+      Async[F].delay(new Jedis(redisConfig.host, redisConfig.port))
+    } { jedis =>
+      Async[F].delay(jedis.close())
+    }
 
-  private val cache: F[Ref[F, Map[Rate.Pair, (Rate, Timestamp)]]] =
-    Ref.of[F, Map[Rate.Pair, (Rate, Timestamp)]](initialCache)
-
-  def httpApp: F[HttpApp[F]] = cache.flatMap { unwrappedCache =>
+  def httpApp: F[HttpApp[F]] = jedisResource.use { jedis =>
     val ratesService: RatesService[F] = RatesServices.dummy[F](client, config)
-    val ratesProgram: RatesProgram[F] = RatesProgram[F](ratesService, unwrappedCache)
+    val ratesProgram: Algebra[F]      = new CachedRatesProgram[F](ratesService, jedis)
 
     val ratesHttpRoutes: HttpRoutes[F] = new RatesHttpRoutes[F](ratesProgram).routes
-
-    val httpApp: HttpApp[F] = ratesHttpRoutes.orNotFound
+    val httpApp: HttpApp[F]            = ratesHttpRoutes.orNotFound
 
     Async[F].pure(httpApp)
   }

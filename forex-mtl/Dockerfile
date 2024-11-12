@@ -1,4 +1,4 @@
-FROM hseeberger/scala-sbt:8u222_1.3.5_2.13.1
+FROM hseeberger/scala-sbt:11.0.11_1.5.5_2.13.6
 
 WORKDIR /scala-app
 
@@ -12,7 +12,6 @@ RUN sbt update
 
 RUN sbt compile
 
-# Expose the port your application runs on (e.g., 8080)
 EXPOSE 8081
 
 # Start the server

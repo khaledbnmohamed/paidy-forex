@@ -1,5 +1,8 @@
+version: "3.8"
+
 services:
   scala-app:
+    platform: linux/x86_64
     build:
       context: .
       dockerfile: Dockerfile
@@ -7,3 +10,28 @@ services:
       - "8081:8081"
     volumes:
       - .:/scala-app
+    depends_on:
+      - redis
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    networks:
+      - scala-network
+
+  redis:
+    image: "redis:latest"
+    ports:
+      - "6379:6379"
+    networks:
+      - scala-network
+
+  oneFrame:
+    image: paidyinc/one-frame
+    ports:
+      - "8085:8085"
+    networks:
+      - scala-network
+
+networks:
+  scala-network:
+    driver: bridge

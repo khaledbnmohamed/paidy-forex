@@ -4,7 +4,8 @@ import scala.concurrent.duration.FiniteDuration
 
 case class ApplicationConfig(
   http: HttpConfig,
-  oneFrame: OneFrameConfig
+  oneFrame: OneFrameConfig,
+  redis: RedisConfig
 )
 case class HttpConfig(
     host: String,
@@ -18,3 +19,5 @@ case class HttpOneFrameConfig(
                                token: String
                              )
 case class OneFrameConfig(http: HttpOneFrameConfig)
+
+case class RedisConfig(host: String, port: Int, expiry: FiniteDuration)
