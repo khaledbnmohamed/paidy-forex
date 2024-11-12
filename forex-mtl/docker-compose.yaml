@@ -25,10 +25,10 @@ services:
     networks:
       - scala-network
 
-  oneFrame:
+  oneframe:
     image: paidyinc/one-frame
     ports:
-      - "8085:8085"
+      - "8085:8080"
     networks:
       - scala-network
 
